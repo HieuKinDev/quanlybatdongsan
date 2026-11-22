@@ -9,20 +9,19 @@ public abstract class BatDongSan {
 	protected String maBatDongSan;
 	protected String diaChi;
 	protected double dienTich;
-	protected HuongNha huongnha;
+	protected HuongNha huongNha;
 	protected double donGiaMoiM2;
 	
 	public BatDongSan() {
 		this("", "", 0.0, HuongNha.DONG_TU_TRACH, 0.0);
 	}
 	
-	public BatDongSan(String maBatDongSan, String diaChi, double dienTich, HuongNha huongnha, double donGiaMoiM2) {
-		super();
-		this.maBatDongSan = maBatDongSan;
-		this.diaChi = diaChi;
-		this.dienTich = dienTich;
-		this.huongnha = huongnha;
-		this.donGiaMoiM2 = donGiaMoiM2;
+	public BatDongSan(String maBatDongSan, String diaChi, double dienTich, HuongNha huongNha, double donGiaMoiM2) {
+		setMaBatDongSan(maBatDongSan);
+		setDiaChi(diaChi);
+		setDiaChi(diaChi);
+		setHuongNha(huongNha);
+		setDonGiaMoiM2(donGiaMoiM2);
 	}
 
 	public String getMaBatDongSan() {
@@ -37,8 +36,8 @@ public abstract class BatDongSan {
 		return dienTich;
 	}
 
-	public HuongNha getHuongnha() {
-		return huongnha;
+	public HuongNha getHuongNha() {
+		return huongNha;
 	}
 
 	public double getDonGiaMoiM2() {
@@ -66,11 +65,11 @@ public abstract class BatDongSan {
 		this.dienTich = dienTich;
 	}
 
-	public void setHuongnha(HuongNha huongnha) {
-		if (huongnha != HuongNha.DONG_TU_TRACH && huongnha != HuongNha.TAY_TU_TRACH) {
+	public void setHuongNha(HuongNha huongNha) {
+		if (huongNha != HuongNha.DONG_TU_TRACH && huongNha != HuongNha.TAY_TU_TRACH) {
 			throw new RuntimeException("Huong nha khong hop le");
 		}
-		this.huongnha = huongnha;
+		this.huongNha = huongNha;
 	}
 
 	public void setDonGiaMoiM2(double donGiaMoiM2) {
@@ -102,7 +101,7 @@ public abstract class BatDongSan {
 	@Override
 	public String toString() {
 		DecimalFormat df = new DecimalFormat("#,##0");
-		return String.format("| %15s | %15s | %15s | %15s | %15s | %15s | ", maBatDongSan, diaChi, dienTich, huongnha, df.format(donGiaMoiM2), df.format(tinhGiaTriGiaoDich()));
+		return String.format("| %15s | %15s | %15s | %15s | %15s | %15s | ", maBatDongSan, diaChi, dienTich, huongNha, df.format(donGiaMoiM2), df.format(tinhGiaTriGiaoDich()));
 	}
 	
 	

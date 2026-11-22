@@ -17,8 +17,8 @@ public class NhaPho extends BatDongSan {
 	public NhaPho(String maBatDongSan, String diaChi, double dienTich, HuongNha huongnha, double donGiaMoiM2,
 			LocalDate ngayBanGiao, LoaiMatTien loaiMatTien) {
 		super(maBatDongSan, diaChi, dienTich, huongnha, donGiaMoiM2);
-		this.ngayBanGiao = ngayBanGiao;
-		this.loaiMatTien = loaiMatTien;
+		setNgayBanGiao(ngayBanGiao);
+		setLoaiMatTien(loaiMatTien);
 	}
 
 	public LocalDate getNgayBanGiao() {
@@ -30,7 +30,7 @@ public class NhaPho extends BatDongSan {
 	}
 
 	public void setNgayBanGiao(LocalDate ngayBanGiao) {
-		if (ngayBanGiao.isBefore(LocalDate.now())) {
+		if (!ngayBanGiao.isAfter(LocalDate.now())) {
 			throw new RuntimeException("Ngay ban giao phai sau ngay hien hanh");
 		}
 		this.ngayBanGiao = ngayBanGiao;
@@ -47,6 +47,7 @@ public class NhaPho extends BatDongSan {
 	public double tinhGiaTriGiaoDich() {
 		double giaTriGoc = getDienTich() * getDonGiaMoiM2();
 		double heSoViTri = 0.0;
+		double phiPhongThuy = 0.0;
 		
 		if (loaiMatTien.equals(LoaiMatTien.MAT_TIEN_LON)) {
 			heSoViTri = giaTriGoc * 0.3;
@@ -54,7 +55,13 @@ public class NhaPho extends BatDongSan {
 			heSoViTri = giaTriGoc * 0.1;
 		}
 		
-		return giaTriGoc + heSoViTri;
+		if (getHuongNha() == HuongNha.DONG_TU_TRACH) {
+			phiPhongThuy = giaTriGoc * 0.05;
+		} else {
+			phiPhongThuy = giaTriGoc * 0.03;
+		}
+		
+		return giaTriGoc + heSoViTri + phiPhongThuy;
 	}
 
 	@Override
