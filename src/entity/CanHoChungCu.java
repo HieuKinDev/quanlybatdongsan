@@ -10,10 +10,10 @@ public class CanHoChungCu extends BatDongSan {
 		this("", "", 0.0, HuongNha.DONG_TU_TRACH, 0.0, ViTriTang.TANG_THAP);
 	}
 
-	public CanHoChungCu(String maBatDongSan, String diaChi, double dienTich, HuongNha huongnha, double donGiaMoiM2,
+	public CanHoChungCu(String maBatDongSan, String diaChi, double dienTich, HuongNha huongNha, double donGiaMoiM2,
 			ViTriTang viTriTang) {
-		super(maBatDongSan, diaChi, dienTich, huongnha, donGiaMoiM2);
-		this.viTriTang = viTriTang;
+		super(maBatDongSan, diaChi, dienTich, huongNha, donGiaMoiM2);
+		setViTriTang(viTriTang);
 	}
 
 	public ViTriTang getViTriTang() {

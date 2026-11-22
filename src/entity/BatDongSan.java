@@ -19,7 +19,7 @@ public abstract class BatDongSan {
 	public BatDongSan(String maBatDongSan, String diaChi, double dienTich, HuongNha huongNha, double donGiaMoiM2) {
 		setMaBatDongSan(maBatDongSan);
 		setDiaChi(diaChi);
-		setDiaChi(diaChi);
+		setDienTich(dienTich);
 		setHuongNha(huongNha);
 		setDonGiaMoiM2(donGiaMoiM2);
 	}

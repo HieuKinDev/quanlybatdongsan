@@ -11,7 +11,7 @@ public class NhaPho extends BatDongSan {
 	private LoaiMatTien loaiMatTien;
 	
 	public NhaPho() {
-		this("", "", 0.0, HuongNha.DONG_TU_TRACH, 0.0, LocalDate.now(), LoaiMatTien.HEM_NHO);
+		this("", "", 0.0, HuongNha.DONG_TU_TRACH, 0.0, LocalDate.now().plusDays(1), LoaiMatTien.HEM_NHO);
 	}
 	
 	public NhaPho(String maBatDongSan, String diaChi, double dienTich, HuongNha huongnha, double donGiaMoiM2,
