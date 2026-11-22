@@ -1,6 +1,7 @@
 package entity;
 
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 import enums.HuongNha;
 
@@ -79,6 +80,23 @@ public abstract class BatDongSan {
 		this.donGiaMoiM2 = donGiaMoiM2;
 	}
 	
+	@Override
+	public int hashCode() {
+		return Objects.hash(maBatDongSan);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BatDongSan other = (BatDongSan) obj;
+		return Objects.equals(maBatDongSan, other.maBatDongSan);
+	}
+
 	public abstract double tinhGiaTriGiaoDich();
 
 	@Override

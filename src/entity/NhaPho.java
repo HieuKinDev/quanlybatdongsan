@@ -63,7 +63,4 @@ public class NhaPho extends BatDongSan {
 		return super.toString() + String.format("%15s | %15s | ", ngayBanGiao.format(dtf), loaiMatTien);
 	}
 	
-	
-	
-	
 }
